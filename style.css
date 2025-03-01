@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #2c3e50;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: #e74c3c;
+}
+
+/* Logo */
+.logo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* No rotation, just smooth scaling if needed */
+}
+
+/* No hover effect */
+.logo img:hover {
+    transform: none; /* Ensure no rotation or scaling on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    text-align: center;
+    color: white;
+}
+
+/* Hero Content */
+.hero-content {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: #f39c12;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: #ecf0f1;
+    padding: 50px;
+    gap: 40px;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* About Content */
+.about-content {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+}
