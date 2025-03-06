@@ -12,36 +12,35 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background: #2c3e50;
-    padding: 10px 20px;
+    background: #2c3e50; /* Dark background for navbar */
+    padding: 15px 20px;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-item {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.3s;
 }
 
 .nav-item:hover {
-    color: #e74c3c;
+    color: #e74c3c; /* Red color on hover */
 }
 
 /* Logo */
 .logo img {
     width: 80px;
     height: auto;
-    transition: transform 0.5s ease-in-out; /* No rotation, just smooth scaling if needed */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* No hover effect */
 .logo img:hover {
-    transform: none; /* Ensure no rotation or scaling on hover */
+    transform: scale(1.1); /* Scale effect when hovered */
 }
 
 /* Hero Section */
@@ -50,7 +49,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
     text-align: center;
     color: white;
 }
@@ -68,7 +67,7 @@
 .hero h2 {
     font-size: 2rem;
     margin-top: 10px;
-    color: #f39c12;
+    color: #f39c12; /* Gold color */
 }
 
 /* About Section */
@@ -104,42 +103,190 @@
 }
 
 .about-content h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark color for headings */
+    margin-bottom: 15px;
 }
 
 .about-content p {
     font-size: 1.2rem;
-    color: #34495e;
+    color: #34495e; /* Dark gray color for text */
 }
 
-/* Responsive Design */
+/* Education & Skills Section */
+.education-skills {
+    padding: 60px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.education-skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.education, .skills {
+    width: 45%;
+}
+
+.education h2, .skills h2 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark color for headings */
+    margin-bottom: 20px;
+}
+
+.education ul, .skills ul {
+    list-style-type: none;
+}
+
+.education ul li, .skills ul li {
+    font-size: 1.3rem;
+    color: #34495e;
+    padding: 8px 0;
+}
+
+/* Education Section - Bigger, with backdrop */
+.education {
+    width: 70%;
+    margin: auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.education:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Services Section */
+.services {
+    padding: 60px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.services .section-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    justify-content: center;
+}
+
+.services-container .service-item:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+    width: 50%;
+}
+
+.service-item {
+    padding: 20px;
+    background: #34495e;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #e74c3c; /* Red color for service item titles */
+}
+
+.service-item p {
+    font-size: 1rem;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px;
+    background-color: #f4f4f4;
+}
+
+.portfolio .section-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    justify-content: center;
+}
+
+.portfolio-container .portfolio-item:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+    width: 50%;
+}
+
+.portfolio-item {
+    padding: 20px;
+    background: #34495e;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item h4 {
+    font-size: 1.6rem;
+    color: #e74c3c; /* Red color for portfolio item titles */
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+}
+
+/* Active state for expanded section */
+section.active {
+    height: 100vh;
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+/* Hide inactive sections */
+section.inactive {
+    display: none;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
+    .services-container, .portfolio-container {
+        grid-template-columns: 1fr;
     }
 
-    .nav-links {
-        margin: 10px 0;
+    .services-container .service-item:nth-child(3),
+    .portfolio-container .portfolio-item:nth-child(3) {
+        width: 100%;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .about {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-    }
-
-    .about-content {
-        text-align: center;
+    .education {
+        width: 100%;
     }
 }
