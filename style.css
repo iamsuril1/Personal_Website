@@ -3,7 +3,7 @@
     margin: 0;
     border: 0;
 }
-
+/*navbar*/
 #nav {
     display: flex;
     justify-content: center;
@@ -18,6 +18,7 @@
 }
 
 #link {
+    font-family: cursive;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,4 +44,19 @@
 
 #link ul li a:hover {
     color: white;
+}
+/*About Section*/
+#home{
+    display: flex;
+}
+#home_img{
+width: 48%;
+}
+#home_img img{
+    margin: 100px 100px;
+}
+hr {
+    width: 90%;
+    margin: 20px auto;
+    
 }
